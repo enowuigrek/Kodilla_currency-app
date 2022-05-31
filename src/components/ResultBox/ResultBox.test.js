@@ -8,13 +8,13 @@ describe('Component ResultBox', () => {
     { amount: 100, from: 'PLN', to: 'USD', output: 'PLN 100.00 = $28.57' },
     { amount: 20, from: 'USD', to: 'PLN', output: '$20.00 = PLN 70' },
     { amount: 200, from: 'PLN', to: 'USD', output: 'PLN 200.00 = $57.14' },
-    { amount: 345, from: 'USD', to: 'PLN', output: '$345.00 = PLN 1,207.50' },
+    { amount: -345, from: 'USD', to: 'PLN', output: 'Error, wrong value' },
     { amount: 222, from: 'PLN', to: 'PLN', output: 'PLN 222.00 = PLN 222.00' },
   ]; 
 
 
   for (const testObj of testCases) {
-    it('should render proper info about conversion when PLN -> USD', () => {
+    it('should render proper info about conversion', () => {
       render(
         <ResultBox
           from={testObj.from}
